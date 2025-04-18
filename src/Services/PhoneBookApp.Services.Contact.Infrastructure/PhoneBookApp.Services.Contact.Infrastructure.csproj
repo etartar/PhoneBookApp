@@ -10,4 +10,9 @@
     <ProjectReference Include="..\PhoneBookApp.Services.Contact.Application\PhoneBookApp.Services.Contact.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Database\" />
+  </ItemGroup>
+
 </Project>

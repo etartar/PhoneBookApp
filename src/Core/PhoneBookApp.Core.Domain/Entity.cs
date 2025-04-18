@@ -1,6 +1,6 @@
 ﻿namespace PhoneBookApp.Core.Domain;
 
-public abstract class Entity
+public abstract class Entity : IEntity
 {
     private readonly List<IDomainEvent> _domainEvents = [];
 
@@ -15,7 +15,7 @@ public abstract class Entity
         _domainEvents.Clear();
     }
 
-    protected void Raise(IDomainEvent domainEvent)
+    public void Raise(IDomainEvent domainEvent)
     {
         _domainEvents.Add(domainEvent);
     }
