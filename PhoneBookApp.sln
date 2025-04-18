@@ -3,8 +3,68 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{05D51344-895D-43EC-B305-4D19A9A39A04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3571A7D9-45DD-4F04-BA27-01BA6224302B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{71EA8607-18EB-4339-B818-9F64B90AF473}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{35440C0E-62C0-4F8B-999B-AFAF81D6C220}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EB3EBCC3-DB45-4AFA-B2AC-2611DC9EF83E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contact", "Contact", "{994B1826-14D3-448A-ADA1-56F0E0D5D24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Contact.Api", "src\Services\PhoneBookApp.Services.Contact.Api\PhoneBookApp.Services.Contact.Api.csproj", "{7F3AF27A-8002-408E-94A6-DC0A1ED1B1D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Contact.Domain", "src\Services\PhoneBookApp.Services.Contact.Domain\PhoneBookApp.Services.Contact.Domain.csproj", "{D8A30A17-1075-4219-93FE-4AFEEC76997E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Contact.Application", "src\Services\PhoneBookApp.Services.Contact.Application\PhoneBookApp.Services.Contact.Application.csproj", "{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Contact.Infrastructure", "src\Services\PhoneBookApp.Services.Contact.Infrastructure\PhoneBookApp.Services.Contact.Infrastructure.csproj", "{D86A4F5C-9D79-4582-B500-55EDDFEA5150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Core.Domain", "src\Core\PhoneBookApp.Core.Domain\PhoneBookApp.Core.Domain.csproj", "{2FF7E3CC-30AC-43CF-B564-70739F729B9F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F3AF27A-8002-408E-94A6-DC0A1ED1B1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3AF27A-8002-408E-94A6-DC0A1ED1B1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3AF27A-8002-408E-94A6-DC0A1ED1B1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3AF27A-8002-408E-94A6-DC0A1ED1B1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A30A17-1075-4219-93FE-4AFEEC76997E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A30A17-1075-4219-93FE-4AFEEC76997E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A30A17-1075-4219-93FE-4AFEEC76997E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A30A17-1075-4219-93FE-4AFEEC76997E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86A4F5C-9D79-4582-B500-55EDDFEA5150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86A4F5C-9D79-4582-B500-55EDDFEA5150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86A4F5C-9D79-4582-B500-55EDDFEA5150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86A4F5C-9D79-4582-B500-55EDDFEA5150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3571A7D9-45DD-4F04-BA27-01BA6224302B} = {05D51344-895D-43EC-B305-4D19A9A39A04}
+		{71EA8607-18EB-4339-B818-9F64B90AF473} = {05D51344-895D-43EC-B305-4D19A9A39A04}
+		{35440C0E-62C0-4F8B-999B-AFAF81D6C220} = {05D51344-895D-43EC-B305-4D19A9A39A04}
+		{EB3EBCC3-DB45-4AFA-B2AC-2611DC9EF83E} = {05D51344-895D-43EC-B305-4D19A9A39A04}
+		{994B1826-14D3-448A-ADA1-56F0E0D5D24B} = {3571A7D9-45DD-4F04-BA27-01BA6224302B}
+		{7F3AF27A-8002-408E-94A6-DC0A1ED1B1D8} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
+		{D8A30A17-1075-4219-93FE-4AFEEC76997E} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
+		{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
+		{D86A4F5C-9D79-4582-B500-55EDDFEA5150} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
+		{2FF7E3CC-30AC-43CF-B564-70739F729B9F} = {35440C0E-62C0-4F8B-999B-AFAF81D6C220}
 	EndGlobalSection
 EndGlobal
