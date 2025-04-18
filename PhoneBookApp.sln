@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Conta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Core.Domain", "src\Core\PhoneBookApp.Core.Domain\PhoneBookApp.Core.Domain.csproj", "{2FF7E3CC-30AC-43CF-B564-70739F729B9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Core.Infrastructure", "src\Core\PhoneBookApp.Core.Infrastructure\PhoneBookApp.Core.Infrastructure.csproj", "{D3A8AE4B-EFB4-40A0-9AE2-183BE2DB8E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Core.Application", "src\Core\PhoneBookApp.Core.Application\PhoneBookApp.Core.Application.csproj", "{EC7E7C06-768F-4EAC-ABDD-FA2271D669A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FF7E3CC-30AC-43CF-B564-70739F729B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A8AE4B-EFB4-40A0-9AE2-183BE2DB8E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A8AE4B-EFB4-40A0-9AE2-183BE2DB8E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A8AE4B-EFB4-40A0-9AE2-183BE2DB8E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A8AE4B-EFB4-40A0-9AE2-183BE2DB8E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7E7C06-768F-4EAC-ABDD-FA2271D669A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7E7C06-768F-4EAC-ABDD-FA2271D669A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7E7C06-768F-4EAC-ABDD-FA2271D669A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7E7C06-768F-4EAC-ABDD-FA2271D669A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +78,7 @@ Global
 		{3BD12BAC-1D6E-4F5A-878D-665C5D2610A2} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
 		{D86A4F5C-9D79-4582-B500-55EDDFEA5150} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
 		{2FF7E3CC-30AC-43CF-B564-70739F729B9F} = {35440C0E-62C0-4F8B-999B-AFAF81D6C220}
+		{D3A8AE4B-EFB4-40A0-9AE2-183BE2DB8E70} = {35440C0E-62C0-4F8B-999B-AFAF81D6C220}
+		{EC7E7C06-768F-4EAC-ABDD-FA2271D669A7} = {35440C0E-62C0-4F8B-999B-AFAF81D6C220}
 	EndGlobalSection
 EndGlobal

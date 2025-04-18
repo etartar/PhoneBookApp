@@ -1,11 +1,15 @@
+using PhoneBookApp.Services.Contact.Api.Extensions;
+using PhoneBookApp.Services.Contact.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
+
+builder.Services.AddInfrastructure(databaseConnectionString);
 
 var app = builder.Build();
 
@@ -14,6 +18,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    await app.ApplyMigrationsAsync();
 }
 
 app.UseHttpsRedirection();
