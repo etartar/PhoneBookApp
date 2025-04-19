@@ -1,4 +1,6 @@
+using PhoneBookApp.Core.Presentation.ExceptionHandlers;
 using PhoneBookApp.Services.Contact.Api.Extensions;
+using PhoneBookApp.Services.Contact.Application;
 using PhoneBookApp.Services.Contact.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +9,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+builder.Services.AddProblemDetails();
+
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
+
+builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure(databaseConnectionString);
 
@@ -21,6 +29,8 @@ if (app.Environment.IsDevelopment())
 
     await app.ApplyMigrationsAsync();
 }
+
+app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 

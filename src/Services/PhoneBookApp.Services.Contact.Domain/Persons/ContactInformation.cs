@@ -20,4 +20,11 @@ public class ContactInformation
     public string InformationContent { get; set; }
 
     public virtual Person Person { get; set; }
+
+    public static ContactInformation Create(Guid personId, InformationTypes informationType, string informationContent)
+    {
+        ContactInformation contactInformation = new ContactInformation(Guid.NewGuid(), personId, informationType, informationContent);
+
+        return contactInformation;
+    }
 }

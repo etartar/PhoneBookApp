@@ -24,7 +24,7 @@ public class Person : Entity, ISoftDeletable
 
     public virtual ICollection<ContactInformation> ContactInformations { get; set; } = new HashSet<ContactInformation>();
 
-    public Person CreatePerson(string name, string surname, string companyName)
+    public static Person Create(string name, string surname, string companyName)
     {
         Person person = new Person(Guid.NewGuid(), name, surname, companyName);
 

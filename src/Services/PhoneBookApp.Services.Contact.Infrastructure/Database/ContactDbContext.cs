@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PhoneBookApp.Core.Application.Abstractions;
 using PhoneBookApp.Core.Infrastructure.Extensions;
 using PhoneBookApp.Services.Contact.Domain.Persons;
 
 namespace PhoneBookApp.Services.Contact.Infrastructure.Database;
 
-public sealed class ContactDbContext : DbContext
+public sealed class ContactDbContext : DbContext, IUnitOfWork
 {
     public ContactDbContext(DbContextOptions options) : base(options)
     {
