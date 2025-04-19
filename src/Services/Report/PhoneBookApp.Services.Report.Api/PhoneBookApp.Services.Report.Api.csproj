@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\PhoneBookApp.Core.Presentation\PhoneBookApp.Core.Presentation.csproj" />
+    <ProjectReference Include="..\PhoneBookApp.Services.Report.Infrastructure\PhoneBookApp.Services.Report.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

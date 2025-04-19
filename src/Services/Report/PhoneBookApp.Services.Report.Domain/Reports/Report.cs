@@ -1,4 +1,5 @@
-﻿using PhoneBookApp.Services.Report.Domain.ReportRequests;
+﻿using MongoDB.Bson;
+using PhoneBookApp.Services.Report.Domain.ReportRequests;
 
 namespace PhoneBookApp.Services.Report.Domain.Reports;
 
@@ -8,9 +9,8 @@ public class Report
     {
     }
 
-    public Report(Guid id, Guid reportRequestId, string location, int totalPersonCount, int totalPhoneNumberCount)
+    public Report(Guid reportRequestId, string location, int totalPersonCount, int totalPhoneNumberCount)
     {
-        Id = id;
         ReportRequestId = reportRequestId;
         Location = location;
         TotalPersonCount = totalPersonCount;

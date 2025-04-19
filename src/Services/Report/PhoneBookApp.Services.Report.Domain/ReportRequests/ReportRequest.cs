@@ -9,9 +9,8 @@ public class ReportRequest : Entity
     {
     }
 
-    public ReportRequest(Guid id, DateTime requestDate, ReportStatuses reportStatus)
+    public ReportRequest(DateTime requestDate, ReportStatuses reportStatus)
     {
-        Id = id;
         RequestDate = requestDate;
         ReportStatus = reportStatus;
     }
@@ -21,4 +20,13 @@ public class ReportRequest : Entity
     public ReportStatuses ReportStatus { get; set; }
 
     public virtual ICollection<Reports.Report> Reports { get; set; } = new HashSet<Reports.Report>();
+
+    public static ReportRequest Create(DateTime requestDate, ReportStatuses reportStatus)
+    {
+        ReportRequest createReportRequest = new ReportRequest(requestDate, reportStatus);
+
+        //createReportRequest.Raise(new ReportRequestCreatedEvent(createReportRequest.Id));
+
+        return createReportRequest;
+    }
 }
