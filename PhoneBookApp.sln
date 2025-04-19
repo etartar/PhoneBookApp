@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Conta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Contact.Api", "src\Services\Contact\PhoneBookApp.Services.Contact.Api\PhoneBookApp.Services.Contact.Api.csproj", "{88960F0C-14B8-4EAF-800F-A4620F0493C6}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{22D1653C-6EFA-4E15-B482-E59130AF7D00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

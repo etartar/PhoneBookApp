@@ -16,4 +16,8 @@
     <ProjectReference Include="..\PhoneBookApp.Core.Domain\PhoneBookApp.Core.Domain.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="EventBus\" />
+	</ItemGroup>
+
 </Project>

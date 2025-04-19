@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+  phonebookapp.rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: rabbitmq-management
+    restart: always
+    volumes:
+        - ./.containers/queue/data/:/var/lib/rabbitmq
+        - ./.containers/queue/log/:/var/log/rabbitmq
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
+    ports: 
+      - "5672:5672"
+      - "15672:15672"
+
+  phonebookapp.contactdb:
+    image: postgres:latest
+    container_name: contactdb
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Pasword12*
+      - POSTGRES_DB=contactdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  phonebookapp.reportdb:
+    image: mongo:latest
+    container_name: reportdb
+    restart: always
+    ports: 
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  phonebookapp.contact.api:
+    image: ${DOCKER_REGISTRY-}phonebookappservicescontactapi
+    container_name: Contact.Api
+    build:
+      context: .
+      dockerfile: src/Services/Contact/PhoneBookApp.Services.Contact.Api/Dockerfile
+    environment: 
+     - RabbitMQUrl=phonebookapp.rabbitmq
+     - "ConnectionStrings::Database=User Id=postgres; Password=Password12*; Server=phonebookapp.contactdb; Port=5432; Database=contactdb; Integrated Security=true; Pooling=true"
+    ports:
+      - 5000:8080
+      - 5001:8081
+    depends_on:
+      - "phonebookapp.contactdb"
+
+  phonebookapp.report.api:
+    image: ${DOCKER_REGISTRY-}phonebookappservicesreportapi
+    container_name: Report.Api
+    build:
+      context: .
+      dockerfile: src/Services/Report/PhoneBookApp.Services.Report.Api/Dockerfile
+    environment: 
+     - RabbitMQUrl=phonebookapp.rabbitmq
+    ports:
+      - 5100:8080
+      - 5101:8081
+    depends_on:
+      - phonebookapp.reportdb
+
+volumes:
+  postgres_data:
+  mongodb_data:
