@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\PhoneBookApp.Core.Infrastructure\PhoneBookApp.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\PhoneBookApp.Services.Report.Application\PhoneBookApp.Services.Report.Application.csproj" />
+  </ItemGroup>
+
+</Project>
