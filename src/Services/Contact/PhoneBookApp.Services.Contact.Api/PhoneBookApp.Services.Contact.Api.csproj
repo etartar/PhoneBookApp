@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\PhoneBookApp.Core.Presentation\PhoneBookApp.Core.Presentation.csproj" />
+    <ProjectReference Include="..\..\..\Core\PhoneBookApp.Core.Presentation\PhoneBookApp.Core.Presentation.csproj" />
     <ProjectReference Include="..\PhoneBookApp.Services.Contact.Infrastructure\PhoneBookApp.Services.Contact.Infrastructure.csproj" />
   </ItemGroup>
 
