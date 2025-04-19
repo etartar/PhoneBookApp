@@ -12,30 +12,18 @@ internal sealed class ReportConfiguration : IEntityTypeConfiguration<Domain.Repo
 
         builder.HasKey(x => x.Id);
 
-        builder.HasIndex(x => x.ReportRequestId);
-
         builder.Property(p => p.Id)
             .HasColumnName("id");
-        
-        builder.Property(p => p.ReportRequestId)
-            .IsRequired()
-            .HasColumnName("report_request_id");
 
-        builder.Property(x => x.Location)
-            .IsRequired()
-            .HasColumnName("location");
-        
-        builder.Property(x => x.TotalPersonCount)
-            .IsRequired()
-            .HasColumnName("total_person_count");
-        
-        builder.Property(x => x.TotalPhoneNumberCount)
-            .IsRequired()
-            .HasColumnName("total_phone_number_count");
+        builder.Property(x => x.RequestDate).IsRequired()
+            .HasColumnType("datetime");
 
-        builder.HasOne(x => x.ReportRequest)
-            .WithMany()
-            .HasForeignKey(x => x.ReportRequestId)
+        builder.Property(x => x.ReportStatus).IsRequired()
+            .HasConversion<string>();
+
+        builder.HasMany(x => x.ReportDetails)
+            .WithOne()
+            .HasForeignKey(x => x.ReportId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

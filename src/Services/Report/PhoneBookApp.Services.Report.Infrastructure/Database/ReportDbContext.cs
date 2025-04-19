@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PhoneBookApp.Core.Application.Abstractions;
-using PhoneBookApp.Services.Report.Domain.ReportRequests;
+using PhoneBookApp.Services.Report.Domain.ReportDetails;
 
 namespace PhoneBookApp.Services.Report.Infrastructure.Database;
 
@@ -10,8 +10,8 @@ public class ReportDbContext : DbContext, IUnitOfWork
     {
     }
 
-    public DbSet<ReportRequest> ReportRequests { get; set; }
     public DbSet<Domain.Reports.Report> Reports { get; set; }
+    public DbSet<ReportDetail> ReportDetails { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

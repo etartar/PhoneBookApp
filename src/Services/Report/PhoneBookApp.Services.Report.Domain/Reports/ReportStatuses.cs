@@ -2,6 +2,6 @@
 
 public enum ReportStatuses
 {
-    InProgress = 1,
+    Preparing = 1,
     Completed = 2
 }

@@ -1,4 +1,5 @@
 using PhoneBookApp.Core.Presentation.ExceptionHandlers;
+using PhoneBookApp.Services.Report.Application;
 using PhoneBookApp.Services.Report.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +16,7 @@ builder.Services.AddProblemDetails();
 
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
 
-//builder.Services.AddApplication();
+builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure(databaseConnectionString);
 
