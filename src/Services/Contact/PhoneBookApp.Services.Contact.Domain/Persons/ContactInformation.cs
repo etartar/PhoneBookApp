@@ -6,12 +6,12 @@ public class ContactInformation
     {
     }
 
-    public ContactInformation(Guid id, Guid personId, InformationTypes ınformationType, string ınformationContent)
+    public ContactInformation(Guid id, Guid personId, InformationTypes ınformationType, string informationContent)
     {
         Id = id;
         PersonId = personId;
         InformationType = ınformationType;
-        InformationContent = ınformationContent;
+        InformationContent = informationContent;
     }
 
     public Guid Id { get; set; }

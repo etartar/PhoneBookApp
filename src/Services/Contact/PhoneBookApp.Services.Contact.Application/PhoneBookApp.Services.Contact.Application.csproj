@@ -15,4 +15,8 @@
     <ProjectReference Include="..\PhoneBookApp.Services.Contact.Domain\PhoneBookApp.Services.Contact.Domain.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="PhoneBookApp.Services.Contact.UnitTests" />
+	</ItemGroup>
+
 </Project>
