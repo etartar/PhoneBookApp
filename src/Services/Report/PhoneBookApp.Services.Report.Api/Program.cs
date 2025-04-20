@@ -1,4 +1,7 @@
+using PhoneBookApp.Core.Infrastructure;
+using PhoneBookApp.Core.Infrastructure.EventBus;
 using PhoneBookApp.Core.Presentation.ExceptionHandlers;
+using PhoneBookApp.Services.Report.Api.Extensions;
 using PhoneBookApp.Services.Report.Application;
 using PhoneBookApp.Services.Report.Infrastructure;
 
@@ -15,10 +18,18 @@ builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
+var rabbitMqSettings = new RabbitMqSettings(builder.Configuration.GetConnectionString("Queue")!);
+
+builder.Services.AddCoreInfrastructure(
+    "PhoneBookApp.Services.Report.Api",
+    [
+        ReportInfrastructureConfiguration.ConfigureConsumers
+    ],
+    rabbitMqSettings);
 
 builder.Services.AddApplication();
 
-builder.Services.AddInfrastructure(databaseConnectionString);
+builder.Services.AddReportInfrastructure(builder.Configuration, databaseConnectionString);
 
 var app = builder.Build();
 
@@ -27,6 +38,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    await app.ApplyMigrationsAsync();
 }
 
 app.UseExceptionHandler();

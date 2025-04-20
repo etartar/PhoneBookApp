@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-
-namespace PhoneBookApp.Services.Report.Domain.ReportDetails;
+﻿namespace PhoneBookApp.Services.Report.Domain.ReportDetails;
 
 public class ReportDetail
 {
@@ -8,8 +6,9 @@ public class ReportDetail
     {
     }
 
-    public ReportDetail(Guid reportId, string location, int totalPersonCount, int totalPhoneNumberCount)
+    public ReportDetail(Guid id, Guid reportId, string location, int totalPersonCount, int totalPhoneNumberCount)
     {
+        Id = id;
         ReportId = reportId;
         Location = location;
         TotalPersonCount = totalPersonCount;
@@ -17,18 +16,15 @@ public class ReportDetail
     }
 
     public Guid Id { get; set; }
-
-    [BsonElement("report_id")]
     public Guid ReportId { get; set; }
-
-    [BsonElement("location")]
     public string Location { get; set; }
-
-    [BsonElement("total_person_count")]
     public int TotalPersonCount { get; set; }
-
-    [BsonElement("total_phone_number_count")]
     public int TotalPhoneNumberCount { get; set; }
 
     public virtual Reports.Report Report { get; set; }
+
+    public static ReportDetail Create(Guid reportId, string location, int totalPersonCount, int totalPhoneNumberCount)
+    {
+        return new ReportDetail(Guid.NewGuid(), reportId, location, totalPersonCount, totalPhoneNumberCount);
+    }
 }

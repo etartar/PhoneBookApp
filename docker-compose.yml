@@ -20,22 +20,26 @@ services:
     container_name: contactdb
     restart: always
     ports: 
-      - 5432:5432
+      - 5442:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Pasword12*
       - POSTGRES_DB=contactdb
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
+      - postgres_contact_data:/var/lib/postgresql/data
+      
   phonebookapp.reportdb:
-    image: mongo:latest
+    image: postgres:latest
     container_name: reportdb
     restart: always
     ports: 
-      - "27017:27017"
+      - 5452:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Pasword12*
+      - POSTGRES_DB=reportdb
     volumes:
-      - mongodb_data:/data/db
+      - postgres_report_data:/var/lib/postgresql/data
 
   phonebookapp.contact.api:
     image: ${DOCKER_REGISTRY-}phonebookappservicescontactapi
@@ -44,8 +48,8 @@ services:
       context: .
       dockerfile: src/Services/Contact/PhoneBookApp.Services.Contact.Api/Dockerfile
     environment: 
-     - RabbitMQUrl=phonebookapp.rabbitmq
-     - "ConnectionStrings::Database=User Id=postgres; Password=Password12*; Server=phonebookapp.contactdb; Port=5432; Database=contactdb; Integrated Security=true; Pooling=true"
+     - "ConnectionStrings::Database=User Id=postgres; Password=Password12*; Server=phonebookapp.contactdb; Port=5442; Database=contactdb; Integrated Security=true; Pooling=true"
+     - "ConnectionStrings::Queue=amqp://phonebookapp.rabbitmq:5672"
     ports:
       - 5000:8080
       - 5001:8081
@@ -59,7 +63,8 @@ services:
       context: .
       dockerfile: src/Services/Report/PhoneBookApp.Services.Report.Api/Dockerfile
     environment: 
-     - RabbitMQUrl=phonebookapp.rabbitmq
+     - "ConnectionStrings::Database=User Id=postgres; Password=Password12*; Server=phonebookapp.reportdb; Port=5452; Database=reportdb; Integrated Security=true; Pooling=true"
+     - "ConnectionStrings::Queue=amqp://phonebookapp.rabbitmq:5672"
     ports:
       - 5100:8080
       - 5101:8081
@@ -67,5 +72,5 @@ services:
       - phonebookapp.reportdb
 
 volumes:
-  postgres_data:
-  mongodb_data:
+  postgres_contact_data:
+  postgres_report_data:
