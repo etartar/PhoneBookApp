@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MongoDB.EntityFrameworkCore.Extensions;
 
 namespace PhoneBookApp.Services.Report.Infrastructure.Configurations;
 
@@ -8,21 +7,17 @@ internal sealed class ReportConfiguration : IEntityTypeConfiguration<Domain.Repo
 {
     public void Configure(EntityTypeBuilder<Domain.Reports.Report> builder)
     {
-        builder.ToCollection("reports");
-
         builder.HasKey(x => x.Id);
 
-        builder.Property(p => p.Id)
-            .HasColumnName("id");
+        builder.Property(p => p.Id);
 
-        builder.Property(x => x.RequestDate).IsRequired()
-            .HasColumnType("datetime");
+        builder.Property(x => x.RequestDate).IsRequired();
 
         builder.Property(x => x.ReportStatus).IsRequired()
             .HasConversion<string>();
 
         builder.HasMany(x => x.ReportDetails)
-            .WithOne()
+            .WithOne(x => x.Report)
             .HasForeignKey(x => x.ReportId)
             .OnDelete(DeleteBehavior.Restrict);
     }

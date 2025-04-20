@@ -11,4 +11,8 @@ public static class ReportErrors
     public static Error NotFound(Guid reportId) => Error.NotFound(
         "Reports.NotFound",
         $"Id = '{reportId}' olan rapor sistemde bulunamadı.");
+
+    public static Error TransactionError(string message) => Error.Problem(
+        "Reports.TransactionError",
+        message);
 }

@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using PhoneBookApp.Core.Application.Messaging;
 using PhoneBookApp.Core.Domain;
 using PhoneBookApp.Services.Report.Domain.Reports;
@@ -9,18 +10,14 @@ internal sealed class GetReportByIdQueryHandler(IReportRepository reportReposito
 {
     public async Task<Result<GetReportDto>> Handle(GetReportByIdQuery request, CancellationToken cancellationToken)
     {
-        var report = await reportRepository.GetAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
+        var report = await reportRepository.GetAsync(x => x.Id == request.Id, 
+            include: x => x.Include(x => x.ReportDetails),
+            cancellationToken: cancellationToken);
 
         if (report is null)
         {
             return Result.Failure<GetReportDto>(ReportErrors.NotFound(request.Id));
         }
-
-        var reportDetails = await reportRepository.GetReportDetailListAsync(request.Id, 
-            enableTracking: false,
-            cancellationToken: cancellationToken);
-
-        report.ReportDetails = reportDetails;
 
         var reportData = report.Adapt<GetReportDto>();
 

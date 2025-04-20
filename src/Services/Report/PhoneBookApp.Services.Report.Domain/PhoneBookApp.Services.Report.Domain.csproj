@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Bson" Version="3.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Core\PhoneBookApp.Core.Domain\PhoneBookApp.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Shared\PhoneBookApp.Shared\PhoneBookApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

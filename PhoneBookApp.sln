@@ -41,6 +41,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Conta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Services.Contact.Api", "src\Services\Contact\PhoneBookApp.Services.Contact.Api\PhoneBookApp.Services.Contact.Api.csproj", "{88960F0C-14B8-4EAF-800F-A4620F0493C6}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{22D1653C-6EFA-4E15-B482-E59130AF7D00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Shared", "src\Shared\PhoneBookApp.Shared\PhoneBookApp.Shared.csproj", "{65B0524C-A13E-4AD4-A605-84B79115C1FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookApp.Core.EventBus", "src\Core\PhoneBookApp.Core.EventBus\PhoneBookApp.Core.EventBus.csproj", "{3E75FE16-2ECE-4379-8775-2FA772715974}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +101,18 @@ Global
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D1653C-6EFA-4E15-B482-E59130AF7D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B0524C-A13E-4AD4-A605-84B79115C1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B0524C-A13E-4AD4-A605-84B79115C1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B0524C-A13E-4AD4-A605-84B79115C1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B0524C-A13E-4AD4-A605-84B79115C1FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E75FE16-2ECE-4379-8775-2FA772715974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E75FE16-2ECE-4379-8775-2FA772715974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E75FE16-2ECE-4379-8775-2FA772715974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E75FE16-2ECE-4379-8775-2FA772715974}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,5 +136,7 @@ Global
 		{5949E1B5-DA96-49DC-ADF0-6FA0206C3F03} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
 		{D8A6B1CB-612A-4A98-A6E4-BD5BC02F868C} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
 		{88960F0C-14B8-4EAF-800F-A4620F0493C6} = {994B1826-14D3-448A-ADA1-56F0E0D5D24B}
+		{65B0524C-A13E-4AD4-A605-84B79115C1FF} = {EB3EBCC3-DB45-4AFA-B2AC-2611DC9EF83E}
+		{3E75FE16-2ECE-4379-8775-2FA772715974} = {35440C0E-62C0-4F8B-999B-AFAF81D6C220}
 	EndGlobalSection
 EndGlobal
